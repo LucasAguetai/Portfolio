@@ -36,9 +36,6 @@ const I18N_EN = {
   "cts-redacted":
     '<span class="prompt">$</span> cat missions.txt<br>' +
     '<span class="redacted-out">cat: missions.txt: Permission denied — 🔒 confidential</span>',
-  "cts-tags":
-    '<span class="tag">Networks</span><span class="tag">Cybersecurity</span>' +
-    '<span class="tag">Python</span><span class="tag">Linux</span>',
   "epita-badge": "2024 — today",
   "epita-title": 'Cybersecurity engineering cycle <span class="at">@</span> EPITA',
   "epita-sub": "Computer science engineering school · Paris",
