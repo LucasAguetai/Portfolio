@@ -489,6 +489,21 @@ body {
   background: rgba(10, 13, 20, 0.55);
 }
 
+/* variante image à droite + espacement entre cartes featured */
+.pe-card + .pe-card { margin-top: 1.5rem; }
+.pe-flip .pe-image { order: 2; }
+.pe-flip .pe-content { padding: 0.5rem 0 0.5rem 0.5rem; }
+
+.pe-link {
+  display: inline-block;
+  margin-top: 1.1rem;
+  font-size: 0.78rem;
+  color: var(--cyan);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.pe-link:hover { opacity: 0.75; }
+
 .pe-content { padding: 0.5rem 0.5rem 0.5rem 0; display: flex; flex-direction: column; }
 .pe-content h3 { font-size: 1.35rem; margin-bottom: 0.2rem; }
 .pe-desc { color: var(--text-dim); margin-bottom: 1rem; }
@@ -530,6 +545,8 @@ body {
   .about-grid, .skills-grid { grid-template-columns: 1fr; }
   .pe-card { grid-template-columns: 1fr; }
   .pe-content { padding: 0 0.5rem 0.5rem; }
+  .pe-flip .pe-image { order: 0; }
+  .pe-flip .pe-content { padding: 0 0.5rem 0.5rem; }
   .mini-projects { grid-template-columns: 1fr; }
 
   .nav-toggle { display: flex; }

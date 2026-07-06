@@ -87,6 +87,22 @@ const I18N_EN = {
   "pe-tags":
     '<span class="tag">Training</span><span class="tag">Cyberdefense</span>' +
     '<span class="tag">Networks</span><span class="tag">International</span>',
+  "eu-badge": "June 2024 · Paris",
+  "eu-title": 'Eurosatory 2024 <span class="at">·</span> Exhibitor',
+  "eu-sub": "International defence and security exhibition",
+  "eu-desc":
+    "Eurosatory is the world's largest defence and security exhibition. With " +
+    "<strong>Cyber Test Systems</strong>, I took part in assembling the " +
+    "<strong>CTS-CTL</strong> (Cyber Test Systems Cyber Test Lab) and presented both the company " +
+    "and the lab on the booth.",
+  "eu-list":
+    "<li>Helped assemble the CTS-CTL (Cyber Test Lab)</li>" +
+    "<li>Presented Cyber Test Systems as a whole</li>" +
+    "<li>Demonstrated the CTS-CTL to visitors and delegations</li>",
+  "eu-tags":
+    '<span class="tag">Cyberdefense</span><span class="tag">CTS-CTL</span>' +
+    '<span class="tag">Demos</span><span class="tag">Trade show</span>',
+  "eu-link": "read the Pôle d'Excellence Cyber article →",
   "p42-badge": "1 month · team project",
   "p42-title": '42SH <span class="at">·</span> UNIX shell in C',
   "p42-desc":
