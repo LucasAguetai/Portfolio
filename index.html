@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucas Aguetaï — Ingénieur Cybersécurité</title>
+  <meta name="description" content="Portfolio de Lucas Aguetaï, ingénieur en cybersécurité à EPITA, en alternance chez Cyber Test Systems.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+</head>
+<body>
+
+  <!-- Fond animé -->
+  <div class="bg" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="grid-overlay"></div>
+    <canvas id="matrix-canvas"></canvas>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav glass">
+    <a href="#home" class="nav-logo">
+      <span class="prompt">~/</span>lucas.aguetai
+      <span class="cursor-blink">_</span>
+    </a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#about" data-i18n="nav-about"><span class="nav-index">01.</span> à propos</a></li>
+        <li><a href="#experience" data-i18n="nav-exp"><span class="nav-index">02.</span> expérience</a></li>
+        <li><a href="#skills" data-i18n="nav-skills"><span class="nav-index">03.</span> compétences</a></li>
+        <li><a href="#projects" data-i18n="nav-projects"><span class="nav-index">04.</span> projets</a></li>
+        <li><a href="#contact" data-i18n="nav-contact"><span class="nav-index">05.</span> contact</a></li>
+      </ul>
+      <button class="lang-toggle mono" id="lang-toggle" aria-label="Changer de langue / Switch language">
+        <span data-lang="fr" class="active">FR</span><span class="lang-sep">/</span><span data-lang="en">EN</span>
+      </button>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ===== HERO ===== -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <p class="hero-hello mono" data-i18n="hero-hello">Bonjour, je suis</p>
+        <h1 class="hero-name">Lucas <span class="gradient-text">Aguetaï</span></h1>
+        <p class="hero-role mono">
+          <span class="prompt">&gt;</span> <span id="typed-role"></span><span class="cursor-blink">▊</span>
+        </p>
+        <p class="hero-desc" data-i18n="hero-desc">
+          Ingénieur en cybersécurité à <strong>EPITA</strong>, en alternance chez
+          <strong>Cyber Test Systems</strong>. Passionné par la sécurité offensive,
+          les réseaux et le développement d'outils.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary" data-i18n="btn-see-projects">Voir mes projets</a>
+          <a href="#contact" class="btn btn-ghost" data-i18n="btn-contact-me">Me contacter</a>
+        </div>
+      </div>
+
+      <!-- Terminal -->
+      <div class="terminal glass" id="terminal">
+        <div class="terminal-header">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+          <span class="terminal-title mono">lucas@epita: ~</span>
+        </div>
+        <div class="terminal-body mono" id="terminal-body"></div>
+      </div>
+    </section>
+
+    <!-- ===== À PROPOS ===== -->
+    <section id="about" class="section">
+      <h2 class="section-title" data-i18n="title-about"><span class="section-index mono">01.</span> À propos</h2>
+      <div class="about-grid">
+        <div class="glass card about-text">
+          <p data-i18n="about-p1">
+            Je m'appelle Lucas, j'ai <span id="age-inline"></span> ans et je suis étudiant-ingénieur en
+            <strong>cybersécurité à EPITA</strong>, après un BUT informatique à la
+            Sorbonne Paris Nord. Depuis octobre 2022, je suis en alternance chez
+            <strong>Cyber Test Systems</strong>.
+          </p>
+          <p data-i18n="about-p2">
+            Ce qui me motive : comprendre comment les systèmes fonctionnent — et
+            comment ils cassent. Entre le pentest, l'analyse réseau et le
+            développement d'outils, j'aime autant construire que déconstruire.
+          </p>
+          <p class="mono about-code">
+            <span class="code-kw">while</span>(<span class="code-lit">alive</span>) { <span class="code-fn">learn</span>(); <span class="code-fn">hack</span>(); <span class="code-fn">secure</span>(); }
+          </p>
+        </div>
+        <div class="glass card about-facts mono">
+          <div class="fact"><span class="fact-key">$ whoami</span><span class="fact-val">lucas.aguetai</span></div>
+          <div class="fact"><span class="fact-key">$ birth</span><span class="fact-val" data-i18n="fact-birth">30/08/2003 (<span id="age"></span> ans)</span></div>
+          <div class="fact"><span class="fact-key">$ school</span><span class="fact-val" data-i18n="fact-school">EPITA — Ingénierie cybersécurité</span></div>
+          <div class="fact"><span class="fact-key">$ company</span><span class="fact-val">Cyber Test Systems</span></div>
+          <div class="fact"><span class="fact-key">$ uptime</span><span class="fact-val" data-i18n="fact-uptime">alternance depuis oct. 2022</span></div>
+          <div class="fact"><span class="fact-key">$ locale</span><span class="fact-val">fr_FR / en_US</span></div>
+          <div class="fact"><span class="fact-key">$ status</span><span class="fact-val status-ok" data-i18n="fact-status">● disponible</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EXPÉRIENCE ===== -->
+    <section id="experience" class="section">
+      <h2 class="section-title" data-i18n="title-exp"><span class="section-index mono">02.</span> Expérience</h2>
+      <div class="timeline">
+        <div class="timeline-item glass card">
+          <div class="timeline-badge mono" data-i18n="cts-badge">2022 — aujourd'hui</div>
+          <h3 data-i18n="cts-title">Ingénieur cybersécurité <span class="at">@</span> Cyber Test Systems</h3>
+          <p class="timeline-sub mono" data-i18n="cts-sub">Alternance · depuis octobre 2022</p>
+          <p class="mono redacted" data-i18n="cts-redacted">
+            <span class="prompt">$</span> cat missions.txt<br>
+            <span class="redacted-out">cat: missions.txt: Permission denied — 🔒 confidentiel</span>
+          </p>
+          <div class="tags mono" data-i18n="cts-tags">
+            <span class="tag">Réseaux</span><span class="tag">Cybersécurité</span><span class="tag">Python</span><span class="tag">Linux</span>
+          </div>
+        </div>
+        <div class="timeline-item glass card">
+          <div class="timeline-badge mono" data-i18n="epita-badge">2024 — aujourd'hui</div>
+          <h3 data-i18n="epita-title">Cycle ingénieur cybersécurité <span class="at">@</span> EPITA</h3>
+          <p class="timeline-sub mono" data-i18n="epita-sub">École d'ingénieurs en informatique · Paris</p>
+          <ul class="timeline-list" data-i18n="epita-list">
+            <li>Sécurité offensive et défensive, cryptographie, forensics</li>
+            <li>Systèmes, réseaux et développement bas niveau</li>
+          </ul>
+          <div class="tags mono" data-i18n="epita-tags">
+            <span class="tag">Sécurité</span><span class="tag">Crypto</span><span class="tag">C</span><span class="tag">Systèmes</span>
+          </div>
+        </div>
+        <div class="timeline-item glass card">
+          <div class="timeline-badge mono">2021 — 2024</div>
+          <h3 data-i18n="but-title">BUT Informatique <span class="at">@</span> Sorbonne Paris Nord</h3>
+          <p class="timeline-sub mono" data-i18n="but-sub">Université Sorbonne Paris Nord</p>
+          <ul class="timeline-list" data-i18n="but-list">
+            <li>Développement, réseaux, systèmes et bases de données</li>
+            <li>Début de l'alternance chez Cyber Test Systems en octobre 2022</li>
+          </ul>
+          <div class="tags mono" data-i18n="but-tags">
+            <span class="tag">Python</span><span class="tag">Web</span><span class="tag">SQL</span><span class="tag">Réseaux</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== COMPÉTENCES ===== -->
+    <section id="skills" class="section">
+      <h2 class="section-title" data-i18n="title-skills"><span class="section-index mono">03.</span> Compétences</h2>
+      <div class="skills-grid">
+        <div class="glass card skill-card">
+          <div class="skill-icon">🛡️</div>
+          <h3 data-i18n="skill1-title">Sécurité</h3>
+          <ul class="mono skill-list" data-i18n="skill1-list">
+            <li>Pentest &amp; audit</li>
+            <li>Analyse réseau</li>
+            <li>Simulation d'attaques</li>
+            <li>CTF</li>
+          </ul>
+        </div>
+        <div class="glass card skill-card">
+          <div class="skill-icon">⚙️</div>
+          <h3 data-i18n="skill2-title">Développement</h3>
+          <ul class="mono skill-list" data-i18n="skill2-list">
+            <li>Python</li>
+            <li>C / Java</li>
+            <li>PHP / Web</li>
+            <li>Scripting &amp; automatisation</li>
+          </ul>
+        </div>
+        <div class="glass card skill-card">
+          <div class="skill-icon">🌐</div>
+          <h3 data-i18n="skill3-title">Réseaux &amp; systèmes</h3>
+          <ul class="mono skill-list" data-i18n="skill3-list">
+            <li>TCP/IP, protocoles réseau</li>
+            <li>Linux</li>
+            <li>Virtualisation</li>
+            <li>Wireshark, nmap…</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJETS ===== -->
+    <section id="projects" class="section">
+      <h2 class="section-title" data-i18n="title-projects"><span class="section-index mono">04.</span> Projets</h2>
+      <div class="glass pe-card">
+        <div class="pe-image">
+          <img src="assets/pacific-endeavor.jpg" alt="Lucas Aguetaï accompagnant un participant lors de Pacific Endeavor" loading="lazy">
+          <span class="pe-caption mono glass">📍 Pacific Endeavor</span>
+        </div>
+        <div class="pe-content">
+          <div class="timeline-badge mono">2023 &amp; 2024</div>
+          <h3 data-i18n="pe-title">Pacific Endeavor <span class="at">·</span> Instructeur</h3>
+          <p class="timeline-sub mono" data-i18n="pe-sub">Exercice cyber multinational · région Asie-Pacifique</p>
+          <p class="pe-desc" data-i18n="pe-desc">
+            Pacific Endeavor réunit les forces armées et les acteurs de la région
+            Asie-Pacifique autour de la cybersécurité et de l'interopérabilité des
+            communications. J'y ai participé en tant qu'<strong>instructeur</strong>
+            sur les éditions <strong>2023</strong> et <strong>2024</strong>.
+          </p>
+          <ul class="timeline-list" data-i18n="pe-list">
+            <li>Présentation de plusieurs modules de formation</li>
+            <li>Accompagnement pratique de participants internationaux</li>
+            <li>Mise en œuvre d'exercices de cybersécurité en conditions réelles</li>
+          </ul>
+          <div class="tags mono" data-i18n="pe-tags">
+            <span class="tag">Formation</span><span class="tag">Cyberdéfense</span><span class="tag">Réseaux</span><span class="tag">International</span>
+          </div>
+        </div>
+      </div>
+      <p class="projects-more">
+        <a href="https://github.com/LucasAguetai" target="_blank" rel="noopener" class="btn btn-ghost mono">$ open github.com/LucasAguetai →</a>
+      </p>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="section section-contact">
+      <h2 class="section-title" data-i18n="title-contact"><span class="section-index mono">05.</span> Contact</h2>
+      <div class="glass card contact-card">
+        <p class="mono contact-cmd" data-i18n="contact-cmd"><span class="prompt">$</span> ping lucas.aguetai.fr <span class="status-ok">— 0% packet loss, je réponds vite.</span></p>
+        <p data-i18n="contact-p">Un projet, une opportunité, une question sécu ? Écris-moi.</p>
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="mailto:lucas@aguetai.fr">lucas@aguetai.fr</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/lucasaguetai/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn btn-ghost" href="https://github.com/LucasAguetai" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer mono">
+    <p data-i18n="footer-line"><span class="prompt">$</span> echo "© <span id="year"></span> Lucas Aguetaï — conçu avec ❤️ et beaucoup de café"</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
