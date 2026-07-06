@@ -43,11 +43,13 @@ const I18N_EN = {
   "epita-title": 'Cybersecurity engineering cycle <span class="at">@</span> EPITA',
   "epita-sub": "Computer science engineering school · Paris",
   "epita-list":
-    "<li>Offensive &amp; defensive security, cryptography, forensics</li>" +
-    "<li>Systems, networks and low-level development</li>",
+    "<li>Offensive security: pentesting, attack techniques, reverse engineering, forensics</li>" +
+    "<li>Defensive security: secure development, web security, standards &amp; cyber crisis management</li>" +
+    "<li>Cryptology, AI for cybersecurity, networks &amp; systems</li>" +
+    "<li>Major C system projects: 42SH (full shell), kernel</li>",
   "epita-tags":
-    '<span class="tag">Security</span><span class="tag">Crypto</span>' +
-    '<span class="tag">C</span><span class="tag">Systems</span>',
+    '<span class="tag">Pentest</span><span class="tag">Reverse</span>' +
+    '<span class="tag">Kernel</span><span class="tag">Crypto</span>',
   "but-title": 'BUT in Computer Science <span class="at">@</span> Sorbonne Paris Nord',
   "but-sub": "Sorbonne Paris Nord University",
   "but-list":
@@ -58,15 +60,18 @@ const I18N_EN = {
     '<span class="tag">SQL</span><span class="tag">Networks</span>',
   "skill1-title": "Security",
   "skill1-list":
-    "<li>Pentest &amp; audit</li><li>Network analysis</li>" +
-    "<li>Attack simulation</li><li>CTF</li>",
+    "<li>Pentesting &amp; security audits</li><li>Reverse engineering</li>" +
+    "<li>Forensics</li><li>Web security: attacks &amp; defenses</li>" +
+    "<li>Cryptography</li><li>Cyber crisis management</li>",
   "skill2-title": "Development",
   "skill2-list":
-    "<li>Python</li><li>C / Java</li><li>PHP / Web</li>" +
-    "<li>Scripting &amp; automation</li>",
+    "<li>C — 42SH, kernel</li><li>Python</li><li>Java / C++ / JS</li>" +
+    "<li>Assembly</li><li>Secure development</li>" +
+    "<li>Algorithms &amp; data structures</li>",
   "skill3-title": "Networks &amp; systems",
   "skill3-list":
-    "<li>TCP/IP, network protocols</li><li>Linux</li>" +
+    "<li>TCP/IP, OSI model, LAN</li><li>Linux / Unix</li>" +
+    "<li>Operating systems &amp; kernel</li><li>Windows security</li>" +
     "<li>Virtualization</li><li>Wireshark, nmap…</li>",
   "pe-title": 'Pacific Endeavor <span class="at">·</span> Instructor',
   "pe-sub": "Multinational cyber exercise · Asia-Pacific region",
@@ -82,6 +87,16 @@ const I18N_EN = {
   "pe-tags":
     '<span class="tag">Training</span><span class="tag">Cyberdefense</span>' +
     '<span class="tag">Networks</span><span class="tag">International</span>',
+  "p42-badge": "1 month · team project",
+  "p42-title": '42SH <span class="at">·</span> UNIX shell in C',
+  "p42-desc":
+    "One month to rebuild a complete terminal in C: lexer, parser, execution, " +
+    "redirections, builtins. EPITA's iconic system project.",
+  "pk-badge": "C · low-level",
+  "pk-title": 'Kernel project <span class="at">·</span> OS from scratch',
+  "pk-desc":
+    "Rebuilding an operating system kernel from scratch: boot, memory " +
+    "management, interrupts. Understanding the machine where it all begins.",
   "contact-cmd":
     '<span class="prompt">$</span> ping lucas.aguetai.fr ' +
     '<span class="status-ok">— 0% packet loss, I reply fast.</span>',

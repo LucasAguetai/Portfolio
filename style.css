@@ -284,6 +284,7 @@ body {
 .terminal:hover { transform: perspective(1200px) rotateY(0deg) rotateX(0deg); }
 
 .terminal-header {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -295,7 +296,13 @@ body {
 .dot-red { background: #ff5f57; }
 .dot-yellow { background: #febc2e; }
 .dot-green { background: #28c840; }
-.terminal-title { margin-left: auto; margin-right: auto; color: var(--text-dim); font-size: 0.78rem; }
+.terminal-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--text-dim);
+  font-size: 0.78rem;
+}
 
 .terminal-body {
   padding: 1.2rem 1.4rem 1.6rem;
@@ -487,6 +494,17 @@ body {
 .pe-desc { color: var(--text-dim); margin-bottom: 1rem; }
 .pe-desc strong { color: var(--text); }
 
+.mini-projects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.mini-project { transition: transform 0.25s, border-color 0.25s; }
+.mini-project:hover { transform: translateY(-4px); border-color: rgba(167, 139, 250, 0.45); }
+.mini-project h3 { font-size: 1.15rem; margin-bottom: 0.6rem; }
+.mini-project p { color: var(--text-dim); font-size: 0.92rem; margin-bottom: 1.1rem; }
+
 .projects-more { text-align: center; margin-top: 2.5rem; }
 
 /* ============ CONTACT ============ */
@@ -512,6 +530,7 @@ body {
   .about-grid, .skills-grid { grid-template-columns: 1fr; }
   .pe-card { grid-template-columns: 1fr; }
   .pe-content { padding: 0 0.5rem 0.5rem; }
+  .mini-projects { grid-template-columns: 1fr; }
 
   .nav-toggle { display: flex; }
   .nav-links {
