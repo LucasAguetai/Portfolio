@@ -12,6 +12,7 @@ const I18N_EN = {
     "networks and tool development.",
   "btn-see-projects": "View my projects",
   "btn-contact-me": "Contact me",
+  "btn-cv": "📄 Download my CV",
   "title-about": '<span class="section-index mono">01.</span> About',
   "title-exp": '<span class="section-index mono">02.</span> Experience',
   "title-skills": '<span class="section-index mono">03.</span> Skills',
