@@ -244,7 +244,8 @@ body {
 }
 .hero-desc strong { color: var(--text); }
 
-.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; max-width: 480px; }
+.hero-actions .btn { flex: 1 1 auto; text-align: center; white-space: nowrap; }
 
 .btn {
   display: inline-block;
