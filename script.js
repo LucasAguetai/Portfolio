@@ -28,9 +28,8 @@ const I18N_EN = {
     "Between pentesting, network analysis and tool development, I enjoy " +
     "building as much as breaking.",
   "fact-birth": '30/08/2003 (<span id="age"></span> y/o)',
-  "fact-school": "EPITA — Cybersecurity engineering",
+  "fact-school": "EPITA — cybersecurity",
   "fact-uptime": "apprenticeship since Oct 2022",
-  "fact-status": "● available",
   "cts-badge": "2022 — today",
   "cts-title": 'Cybersecurity engineer <span class="at">@</span> Cyber Test Systems',
   "cts-sub": "Apprenticeship · since October 2022",
@@ -303,7 +302,7 @@ const revealObserver = new IntersectionObserver((entries) => {
   }
 }, { threshold: 0.12 });
 
-document.querySelectorAll(".section .card, .section-title, .timeline-item, .pe-card").forEach((el) => {
+document.querySelectorAll(".section .card, .section-title, .timeline-item, .pe-card, .about-photo").forEach((el) => {
   el.classList.add("reveal");
   revealObserver.observe(el);
 });
