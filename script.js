@@ -30,6 +30,7 @@ const I18N_EN = {
   "fact-birth": '30/08/2003 (<span id="age"></span> y/o)',
   "fact-school": "EPITA — cybersecurity",
   "fact-uptime": "apprenticeship since Oct 2022",
+  "fact-lang": "native French · C1 English",
   "cts-badge": "2022 — today",
   "cts-title": 'Cybersecurity engineer <span class="at">@</span> Cyber Test Systems',
   "cts-sub": "Apprenticeship · since October 2022",
