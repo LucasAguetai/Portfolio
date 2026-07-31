@@ -32,7 +32,7 @@ const I18N_EN = {
   "fact-uptime": "apprenticeship since Oct 2022",
   "fact-lang": "native French · C1 English",
   "cts-badge": "2022 — today",
-  "cts-title": 'Cybersecurity engineer <span class="at">@</span> Cyber Test Systems',
+  "cts-title": 'Cybersecurity engineer apprentice <span class="at">@</span> Cyber Test Systems',
   "cts-sub": "Apprenticeship · since October 2022",
   "cts-redacted":
     '<span class="prompt">$</span> cat missions.txt<br>' +
