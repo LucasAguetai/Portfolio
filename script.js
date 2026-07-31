@@ -116,7 +116,7 @@ const I18N_EN = {
     '<span class="status-ok">— 0% packet loss, I reply fast.</span>',
   "contact-p": "A project, an opportunity, a security question? Drop me a line.",
   "footer-line":
-    '<span class="prompt">$</span> echo "© <span id="year"></span> Lucas Aguetaï — built with ❤️ and lots of coffee"',
+    '<span class="prompt">$</span> echo "© <span id="year"></span> Lucas Aguetaï — built with ❤️"',
 };
 
 const PAGE_TITLES = {
