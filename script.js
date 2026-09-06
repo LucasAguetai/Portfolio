@@ -352,3 +352,9 @@ function drawMatrix() {
   }
 }
 if (!reducedMotion) setInterval(drawMatrix, 66);
+
+// ===== Indice de scroll (souris animée du hero) =====
+const scrollHint = document.getElementById("scroll-hint");
+window.addEventListener("scroll", () => {
+  scrollHint.classList.toggle("hidden", window.scrollY > 60);
+}, { passive: true });
