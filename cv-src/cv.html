@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>CV — Lucas Aguetaï</title>
+<style>
+  @page { size: A4; margin: 0; }
+
+  :root {
+    --ink: #0f172a;
+    --body: #475569;
+    --muted: #94a3b8;
+    --cyan: #0891b2;
+    --cyan-light: #22d3ee;
+    --rule: #e2e8f0;
+    --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--sans);
+    color: var(--body);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 8.6mm 12.46mm 4.1mm 12.05mm;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ---------- en-tête ---------- */
+  .header {
+    display: grid;
+    grid-template-columns: 102px 1fr auto;
+    gap: 32px;
+    /* le filet traverse toute la page : on annule les marges puis on les rend */
+    margin: 0 -12.46mm 0 -12.05mm;
+    padding: 0 12.46mm 16px 12.05mm;
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+  }
+  .header::after {
+    content: "";
+    position: absolute;
+    left: 12.05mm;
+    bottom: -1.5px;
+    width: 159px;
+    height: 2.5px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #06b6d4, #7c3aed, #db2777);
+  }
+
+  .photo {
+    width: 102px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+
+  .whoami {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--cyan);
+    margin-bottom: 2px;
+  }
+  .name {
+    font-size: 28.5px;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.4px;
+    line-height: 1.15;
+  }
+  .name .grad {
+    background: linear-gradient(90deg, #06b6d4, #7c3aed, #db2777);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .tagline {
+    margin-top: 3px;
+    font-size: 13.3px;
+    line-height: 1.45;
+    color: var(--body);
+  }
+  .tagline strong { color: var(--ink); font-weight: 700; }
+
+  .contacts {
+    font-family: var(--mono);
+    font-size: 9.65px;
+    line-height: 19px;
+    margin-top: -2px;
+    color: var(--body);
+    white-space: nowrap;
+  }
+  .contacts a { color: inherit; text-decoration: none; }
+  .contacts .chev { color: var(--cyan); margin-right: 7px; }
+
+  /* ---------- corps en deux colonnes ---------- */
+  .body-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 495.5px 1fr;
+    gap: 24.6px;
+    padding-top: 21.5px;
+  }
+  .sidebar {
+    border-left: 1px solid var(--rule);
+    padding-left: 27px;
+    margin-right: -19px;
+  }
+
+  /* ---------- titres de section ---------- */
+  .sec {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--mono);
+    font-size: 12.8px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 11px;
+  }
+  .sec .num { color: var(--cyan); }
+  .sec::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+  .block + .sec { margin-top: 17.2px; }
+
+  /* ---------- entrées ---------- */
+  .about {
+    font-size: 12.3px;
+    line-height: 1.41;
+  }
+
+  .entry { margin-top: 13px; }
+  .entry:first-of-type { margin-top: 0; }
+
+  .entry-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .entry-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .entry-title .at { color: var(--cyan); }
+  .entry-date {
+    font-family: var(--mono);
+    font-size: 9.5px;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .entry-sub {
+    font-size: 11.2px;
+    font-style: italic;
+    color: var(--body);
+    margin-top: 4px;
+  }
+
+  ul { list-style: none; margin-top: 6px; }
+  li {
+    position: relative;
+    padding-left: 15px;
+    font-size: 12.2px;
+    line-height: 1.44;
+    margin-top: 3px;
+  }
+  li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--cyan-light);
+  }
+
+  /* ---------- colonne de droite ---------- */
+  .skill-group { margin-top: 12px; }
+  .skill-group:first-of-type { margin-top: 0; }
+  .skill-label {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 3px;
+  }
+  .skill-list {
+    font-size: 11.2px;
+    line-height: 1.6;
+  }
+
+  .lang {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11.5px;
+    margin-top: 7.5px;
+  }
+  .pill {
+    font-family: var(--mono);
+    font-size: 9px;
+    color: var(--cyan);
+    background: #cffafe;
+    border: 1px solid #a5f3fc;
+    border-radius: 999px;
+    padding: 1px 9px;
+  }
+
+  .misc {
+    font-size: 11.2px;
+    line-height: 1.6;
+  }
+
+  /* ---------- pied de page ---------- */
+  .footer {
+    margin: 14px -12.46mm 0 -12.05mm;
+    padding: 8px 12.46mm 0 12.05mm;
+    border-top: 1px solid var(--rule);
+    text-align: right;
+    font-family: var(--mono);
+    font-size: 9px;
+    color: #cbd5e1;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="header">
+    <img class="photo" src="photo.jpg" alt="Lucas Aguetaï">
+
+    <div>
+      <div class="whoami">$ whoami</div>
+      <h1 class="name">Lucas <span class="grad">Aguetaï</span></h1>
+      <p class="tagline">
+        Étudiant-ingénieur en <strong>cybersécurité</strong> à <strong>EPITA</strong> ·
+        Alternant chez <strong>Cyber Test Systems</strong>
+      </p>
+    </div>
+
+    <div class="contacts">
+      <div><span class="chev">&#10217;</span>07 82 12 95 40</div>
+      <div><span class="chev">&#10217;</span><a href="mailto:lucas@aguetai.fr">lucas@aguetai.fr</a></div>
+      <div><span class="chev">&#10217;</span>78800 Houilles</div>
+      <div><span class="chev">&#10217;</span><a href="https://lucas.aguetai.fr/">lucas.aguetai.fr</a></div>
+      <div><span class="chev">&#10217;</span><a href="https://www.linkedin.com/in/aguetai">in/aguetai</a></div>
+      <div><span class="chev">&#10217;</span><a href="https://github.com/LucasAguetai">github.com/LucasAguetai</a></div>
+    </div>
+  </header>
+
+  <div class="body-grid">
+
+    <!-- ============ colonne principale ============ -->
+    <main>
+      <div class="sec"><span class="num">01.</span> à propos</div>
+      <div class="block">
+        <p class="about">
+          23 ans, étudiant-ingénieur en cybersécurité à EPITA après un BUT informatique,
+          en alternance chez Cyber Test Systems depuis octobre 2022. Ce qui me motive :
+          comprendre comment les systèmes fonctionnent, et comment ils cassent. Entre le
+          pentest, l'analyse réseau et le développement d'outils, j'aime autant construire
+          que déconstruire.
+        </p>
+      </div>
+
+      <div class="sec"><span class="num">02.</span> expérience</div>
+      <div class="block">
+        <div class="entry">
+          <div class="entry-head">
+            <div class="entry-title">Apprenti ingénieur cybersécurité <span class="at">@ Cyber Test Systems</span></div>
+            <div class="entry-date">depuis oct. 2022</div>
+          </div>
+          <div class="entry-sub">Alternance · missions confidentielles</div>
+        </div>
+      </div>
+
+      <div class="sec"><span class="num">03.</span> événements internationaux</div>
+      <div class="block">
+        <div class="entry">
+          <div class="entry-head">
+            <div class="entry-title">Pacific Endeavor · Instructeur</div>
+            <div class="entry-date">2023 &amp; 2024</div>
+          </div>
+          <div class="entry-sub">Exercice cyber multinational · région Asie-Pacifique</div>
+          <ul>
+            <li>Présentation de modules de formation, accompagnement pratique de participants
+                internationaux et exercices de cybersécurité en conditions réelles.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <div class="entry-title">Eurosatory · Exposant</div>
+            <div class="entry-date">juin 2024 · Paris</div>
+          </div>
+          <div class="entry-sub">Salon international de défense et de sécurité</div>
+          <ul>
+            <li>Montage du CTS-CTL (Cyber Test Lab), démonstrations aux visiteurs et délégations.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sec"><span class="num">04.</span> formation</div>
+      <div class="block">
+        <div class="entry">
+          <div class="entry-head">
+            <div class="entry-title">Cycle ingénieur cybersécurité <span class="at">@ EPITA</span></div>
+            <div class="entry-date">2024 - 2027</div>
+          </div>
+          <div class="entry-sub">École d'ingénieurs en informatique · Paris</div>
+          <ul>
+            <li>Sécurité offensive : pentest, techniques d'attaque, reverse engineering, forensics</li>
+            <li>Sécurité défensive : développement sécurisé, sécurité Web, normes &amp; gestion de crise cyber</li>
+            <li>Cryptologie, IA pour la cybersécurité, réseaux &amp; systèmes</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <div class="entry-title">BUT Informatique <span class="at">@ Sorbonne Paris Nord</span></div>
+            <div class="entry-date">2021 - 2024</div>
+          </div>
+          <div class="entry-sub">Université Sorbonne Paris Nord · en alternance dès la 2<sup>e</sup> année</div>
+          <ul>
+            <li>Développement, réseaux, systèmes et bases de données</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sec"><span class="num">05.</span> projets</div>
+      <div class="block">
+        <div class="entry">
+          <div class="entry-head">
+            <div class="entry-title">42SH · Shell UNIX en C</div>
+            <div class="entry-date">1 mois · en équipe</div>
+          </div>
+          <ul>
+            <li>Un terminal complet recodé en C : lexer, parser, exécution, redirections, builtins.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <div class="entry-title">Projet Kernel · OS from scratch</div>
+            <div class="entry-date">C · bas niveau</div>
+          </div>
+          <ul>
+            <li>Un noyau de système d'exploitation à partir de zéro : boot, gestion mémoire, interruptions.</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <!-- ============ colonne latérale ============ -->
+    <aside class="sidebar">
+      <div class="sec"><span class="num">06.</span> compétences</div>
+      <div class="block">
+        <div class="skill-group">
+          <div class="skill-label">Sécurité</div>
+          <div class="skill-list">
+            Pentest &amp; audits de sécurité<br>
+            Reverse engineering · Forensics<br>
+            Sécurité Web : attaques &amp; défenses<br>
+            Cryptographie<br>
+            Gestion de crise cyber
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-label">Développement</div>
+          <div class="skill-list">
+            C (42SH, kernel)<br>
+            Python · Java · C++ · JS<br>
+            Assembleur<br>
+            Développement sécurisé<br>
+            Algorithmique &amp; structures de données
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-label">Réseaux &amp; systèmes</div>
+          <div class="skill-list">
+            TCP/IP, modèle OSI, LAN<br>
+            Linux / Unix · Sécurité Windows<br>
+            Virtualisation<br>
+            Wireshark, nmap…
+          </div>
+        </div>
+      </div>
+
+      <div class="sec"><span class="num">07.</span> langues</div>
+      <div class="block">
+        <div class="lang"><span>Français</span><span class="pill">natif</span></div>
+        <div class="lang"><span>Anglais</span><span class="pill">C1</span></div>
+      </div>
+
+      <div class="sec"><span class="num">08.</span> divers</div>
+      <div class="block">
+        <div class="misc">
+          Permis B<br>
+          CTF &amp; challenges de sécurité<br>
+          Jeux vidéo &amp; pop culture<br>
+          Magie, cartomancie<br>
+          Jeux de société
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <div class="footer">CV · Lucas Aguetaï · <span id="year">2026</span></div>
+</div>
+</body>
+</html>
