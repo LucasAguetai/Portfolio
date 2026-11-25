@@ -74,9 +74,10 @@
       <ul class="nav-links">
         <li><a href="#about" data-i18n="nav-about"><span class="nav-index">01.</span> à propos</a></li>
         <li><a href="#experience" data-i18n="nav-exp"><span class="nav-index">02.</span> expérience</a></li>
-        <li><a href="#skills" data-i18n="nav-skills"><span class="nav-index">03.</span> compétences</a></li>
-        <li><a href="#projects" data-i18n="nav-projects"><span class="nav-index">04.</span> projets</a></li>
-        <li><a href="#contact" data-i18n="nav-contact"><span class="nav-index">05.</span> contact</a></li>
+        <li><a href="#cve" data-i18n="nav-cve"><span class="nav-index">03.</span> cve</a></li>
+        <li><a href="#skills" data-i18n="nav-skills"><span class="nav-index">04.</span> compétences</a></li>
+        <li><a href="#projects" data-i18n="nav-projects"><span class="nav-index">05.</span> projets</a></li>
+        <li><a href="#contact" data-i18n="nav-contact"><span class="nav-index">06.</span> contact</a></li>
       </ul>
       <button class="lang-toggle mono" id="lang-toggle" aria-label="Changer de langue / Switch language">
         <span data-lang="fr" class="active">FR</span><span class="lang-sep">/</span><span data-lang="en">EN</span>
@@ -201,9 +202,64 @@
       </div>
     </section>
 
+    <!-- ===== CVE ===== -->
+    <section id="cve" class="section">
+      <h2 class="section-title" data-i18n="title-cve"><span class="section-index mono">03.</span> CVE publiées</h2>
+
+      <p class="cve-intro" data-i18n="cve-intro">
+        Deux vulnérabilités que j'ai découvertes et signalées dans le plugin
+        <strong>Spira Importer</strong> de Jenkins, publiées dans l'avis de sécurité
+        du 25 novembre 2026 et corrigées depuis.
+      </p>
+
+      <div class="cve-grid">
+        <article class="glass card cve-card">
+          <div class="cve-head">
+            <span class="cve-id mono">CVE-2026-136843</span>
+            <span class="cve-sev mono">Medium</span>
+          </div>
+          <h3 data-i18n="cve1-title">Cross-Site Request Forgery</h3>
+          <p data-i18n="cve1-desc">
+            L'endpoint vulnérable n'imposait pas de requête POST : une page
+            malveillante pouvait déclencher l'action à l'insu d'un utilisateur
+            authentifié.
+          </p>
+          <div class="tags mono">
+            <span class="tag">CSRF</span><span class="tag">Jenkins</span>
+          </div>
+        </article>
+
+        <article class="glass card cve-card">
+          <div class="cve-head">
+            <span class="cve-id mono">CVE-2026-136844</span>
+            <span class="cve-sev mono">Medium</span>
+          </div>
+          <h3 data-i18n="cve2-title">Contrôle de permission manquant</h3>
+          <p data-i18n="cve2-desc">
+            Le plugin ne vérifiait aucune permission sur cet endpoint : un simple
+            accès Overall/Read suffisait à faire ouvrir des connexions vers des URL
+            contrôlées par l'attaquant.
+          </p>
+          <div class="tags mono">
+            <span class="tag" data-i18n="cve2-tag">Contrôle de permission manquant</span><span class="tag">Jenkins</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="glass card cve-meta mono">
+        <p><span class="prompt">$</span> cat security-3912.txt</p>
+        <div class="cve-facts">
+          <span class="cve-key">plugin</span><span data-i18n="cve-fact-plugin">Spira Importer ≤ 4.0.0</span>
+          <span class="cve-key">ticket</span><span>SECURITY-3912</span>
+          <span class="cve-key" data-i18n="cve-key-fix">corrigé</span><span>58.v33212b_f5b_2d1</span>
+        </div>
+        <a class="pe-link mono" href="https://www.jenkins.io/security/advisory/2026-11-25/" target="_blank" rel="noopener" data-i18n="cve-link">voir l'avis de sécurité Jenkins →</a>
+      </div>
+    </section>
+
     <!-- ===== COMPÉTENCES ===== -->
     <section id="skills" class="section">
-      <h2 class="section-title" data-i18n="title-skills"><span class="section-index mono">03.</span> Compétences</h2>
+      <h2 class="section-title" data-i18n="title-skills"><span class="section-index mono">04.</span> Compétences</h2>
       <div class="skills-grid">
         <div class="glass card skill-card">
           <div class="skill-icon">🛡️</div>
@@ -246,7 +302,7 @@
 
     <!-- ===== PROJETS ===== -->
     <section id="projects" class="section">
-      <h2 class="section-title" data-i18n="title-projects"><span class="section-index mono">04.</span> Projets</h2>
+      <h2 class="section-title" data-i18n="title-projects"><span class="section-index mono">05.</span> Projets</h2>
       <div class="glass pe-card">
         <div class="pe-image">
           <img src="assets/pacific-endeavor.jpg" alt="Lucas Aguetaï accompagnant un participant lors de Pacific Endeavor" loading="lazy">
@@ -331,7 +387,7 @@
 
     <!-- ===== CONTACT ===== -->
     <section id="contact" class="section section-contact">
-      <h2 class="section-title" data-i18n="title-contact"><span class="section-index mono">05.</span> Contact</h2>
+      <h2 class="section-title" data-i18n="title-contact"><span class="section-index mono">06.</span> Contact</h2>
       <div class="glass card contact-card">
         <p class="mono contact-cmd" data-i18n="contact-cmd"><span class="prompt">$</span> ping lucas.aguetai.fr <span class="status-ok">— 0% packet loss, je réponds vite.</span></p>
         <p data-i18n="contact-p">Un projet, une opportunité, une question sécu ? Écris-moi.</p>

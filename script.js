@@ -2,9 +2,10 @@
 const I18N_EN = {
   "nav-about": '<span class="nav-index">01.</span> about',
   "nav-exp": '<span class="nav-index">02.</span> experience',
-  "nav-skills": '<span class="nav-index">03.</span> skills',
-  "nav-projects": '<span class="nav-index">04.</span> projects',
-  "nav-contact": '<span class="nav-index">05.</span> contact',
+  "nav-cve": '<span class="nav-index">03.</span> cve',
+  "nav-skills": '<span class="nav-index">04.</span> skills',
+  "nav-projects": '<span class="nav-index">05.</span> projects',
+  "nav-contact": '<span class="nav-index">06.</span> contact',
   "hero-hello": "Hi, I'm",
   "hero-desc":
     'Cybersecurity engineer at <strong>EPITA</strong>, apprentice at ' +
@@ -15,9 +16,26 @@ const I18N_EN = {
   "btn-cv": "📄 Download my CV",
   "title-about": '<span class="section-index mono">01.</span> About',
   "title-exp": '<span class="section-index mono">02.</span> Experience',
-  "title-skills": '<span class="section-index mono">03.</span> Skills',
-  "title-projects": '<span class="section-index mono">04.</span> Projects',
-  "title-contact": '<span class="section-index mono">05.</span> Contact',
+  "title-cve": '<span class="section-index mono">03.</span> Published CVEs',
+  "title-skills": '<span class="section-index mono">04.</span> Skills',
+  "title-projects": '<span class="section-index mono">05.</span> Projects',
+  "title-contact": '<span class="section-index mono">06.</span> Contact',
+  "cve-intro":
+    "Two vulnerabilities I found and reported in the Jenkins " +
+    "<strong>Spira Importer</strong> plugin, published in the November 25, 2026 " +
+    "security advisory and fixed since.",
+  "cve1-title": "Cross-Site Request Forgery",
+  "cve1-desc":
+    "The vulnerable endpoint did not require a POST request: a malicious page " +
+    "could trigger the action without an authenticated user knowing.",
+  "cve2-title": "Missing permission check",
+  "cve2-tag": "Missing permission check",
+  "cve2-desc":
+    "The plugin checked no permission on that endpoint: plain Overall/Read " +
+    "access was enough to make it open connections to attacker-controlled URLs.",
+  "cve-fact-plugin": "Spira Importer \u2264 4.0.0",
+  "cve-key-fix": "fixed in",
+  "cve-link": "read the Jenkins security advisory \u2192",
   "about-p1":
     'My name is Lucas, I\'m <span id="age-inline"></span> years old and I\'m an ' +
     "engineering student in <strong>cybersecurity at EPITA</strong>, after a " +
