@@ -37,7 +37,7 @@ const I18N_EN = {
   "cve-key-fix": "fixed in",
   "cve-link": "read the Jenkins security advisory \u2192",
   "about-p1":
-    'My name is Lucas, I\'m <span id="age-inline"></span> years old and I\'m an ' +
+    'My name is Lucas, I\'m <span id="age-inline">23</span> years old and I\'m an ' +
     "engineering student in <strong>cybersecurity at EPITA</strong>, after a " +
     "bachelor's degree (BUT) in computer science at Sorbonne Paris Nord. Since " +
     "October 2022, I've been an apprentice at <strong>Cyber Test Systems</strong>.",
@@ -45,7 +45,7 @@ const I18N_EN = {
     "What drives me: understanding how systems work — and how they break. " +
     "Between pentesting, network analysis and tool development, I enjoy " +
     "building as much as breaking.",
-  "fact-birth": '30/08/2003 (<span id="age"></span> y/o)',
+  "fact-birth": '30/08/2003 (<span id="age">23</span> y/o)',
   "fact-school": "EPITA — cybersecurity",
   "fact-uptime": "apprenticeship since Oct 2022",
   "fact-lang": "native French · C1 English",
@@ -134,7 +134,7 @@ const I18N_EN = {
     '<span class="status-ok">— 0% packet loss, I reply fast.</span>',
   "contact-p": "A project, an opportunity, a security question? Drop me a line.",
   "footer-line":
-    '<span class="prompt">$</span> echo "© <span id="year"></span> Lucas Aguetaï — built with ❤️"',
+    '<span class="prompt">$</span> echo "© <span id="year">2026</span> Lucas Aguetaï — built with ❤️"',
 };
 
 const PAGE_TITLES = {
