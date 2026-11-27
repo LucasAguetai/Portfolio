@@ -1,0 +1,32 @@
+name: Mettre à jour l'âge et l'année
+
+# Les valeurs de repli écrites en dur dans le HTML (âge, année) se périment
+# toutes seules. Ce job les recalcule le 1er de chaque mois et ne commite que
+# s'il y a vraiment un changement — soit deux fois par an en pratique.
+on:
+  schedule:
+    - cron: "0 3 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Recalculer les valeurs de repli
+        run: python3 scripts/update-dates.py
+
+      - name: Commiter et pousser si changement
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "Valeurs déjà à jour, rien à pousser."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "Mise à jour de l'âge et de l'année"
+          git push
