@@ -3,13 +3,19 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://lucas.aguetai.fr/</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <image:image>
-      <image:loc>https://lucas.aguetai.fr/assets/pacific-endeavor.jpg</image:loc>
+      <image:loc>https://lucas.aguetai.fr/assets/lucas-aguetai-portrait.png</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://lucas.aguetai.fr/assets/eurosatory.jpg</image:loc>
+      <image:loc>https://lucas.aguetai.fr/assets/lucas-aguetai.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lucas.aguetai.fr/assets/lucas-aguetai-pacific-endeavor.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lucas.aguetai.fr/assets/lucas-aguetai-eurosatory-2024.jpg</image:loc>
     </image:image>
   </url>
 </urlset>
