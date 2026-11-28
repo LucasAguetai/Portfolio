@@ -321,10 +321,21 @@ const revealObserver = new IntersectionObserver((entries) => {
   }
 }, { threshold: 0.12 });
 
-document.querySelectorAll(".section .card, .section-title, .timeline-item, .pe-card, .about-photo").forEach((el) => {
+const aReveler = document.querySelectorAll(
+  ".section .card, .section-title, .timeline-item, .pe-card, .about-photo"
+);
+aReveler.forEach((el) => {
   el.classList.add("reveal");
   revealObserver.observe(el);
 });
+
+// Filet de sécurité : sans défilement, l'observateur ne se déclenche jamais et
+// tout resterait en opacity 0 — invisible pour les moteurs qui exécutent le JS.
+// Au bout de 3 s on révèle ce qui ne l'a pas été ; l'utilisateur ne voit rien
+// puisque ces blocs sont hors écran.
+setTimeout(() => {
+  aReveler.forEach((el) => el.classList.add("visible"));
+}, 3000);
 
 // ===== Menu mobile =====
 const navToggle = document.querySelector(".nav-toggle");
